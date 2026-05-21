@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atelier — AI-powered fashion design sketchboard for everyone.">
+  <title>Atelier — built for anyone who wants to design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-mark">ATELIER</div>
+    <div class="gold-divider"></div>
+    <p class="tagline">Where anyone learns to design</p>
+  </header>
+
+  <main class="main-content">
+
+    <section class="design-form">
+      <h2 class="section-title">Design Your Piece</h2>
+
+      <div class="form-group">
+        <label for="description">Describe what you want to create</label>
+        <textarea
+          id="description"
+          rows="4"
+          placeholder="e.g. flowing midi dress with balloon sleeves and a dropped waist"
+        ></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="body-type">Body type</label>
+          <select id="body-type">
+            <option value="slim">Slim</option>
+            <option value="average">Average</option>
+            <option value="curvy" selected>Curvy</option>
+            <option value="plus-size">Plus-size</option>
+            <option value="athletic">Athletic</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="complexion">Complexion</label>
+          <select id="complexion">
+            <option value="fair">Fair</option>
+            <option value="light">Light</option>
+            <option value="medium" selected>Medium</option>
+            <option value="tan">Tan</option>
+            <option value="deep">Deep</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="aesthetic">Aesthetic</label>
+          <select id="aesthetic">
+            <option value="indian-traditional">Indian Traditional</option>
+            <option value="indo-western-fusion" selected>Indo-Western Fusion</option>
+            <option value="western-contemporary">Western Contemporary</option>
+            <option value="minimalist">Minimalist</option>
+            <option value="maximalist">Maximalist</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="generate-btn" class="generate-btn">Generate Sketch</button>
+    </section>
+
+    <section id="result-section" class="result-section">
+      <div id="result-placeholder" class="result-placeholder">
+        Your sketch will appear here
+      </div>
+
+      <div id="result-loading" class="result-loading" hidden>
+        <div class="loading-line"></div>
+        <p class="loading-text">Sketching your design...</p>
+      </div>
+
+      <div id="result-display" class="result-display" hidden>
+        <img id="result-image" class="result-image" alt="Generated sketch" />
+        <div id="result-prompt" class="result-prompt"></div>
+        <button id="download-btn" class="download-btn">Download Sketch</button>
+      </div>
+
+      <div id="result-error" class="result-error" hidden></div>
+    </section>
+
+    <section id="moodboard-section" class="moodboard-section" hidden>
+      <h2 class="section-title">Moodboard</h2>
+      <p class="moodboard-count" id="moodboard-count"></p>
+      <div id="moodboard-grid" class="moodboard-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Atelier — built for anyone who wants to design</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
