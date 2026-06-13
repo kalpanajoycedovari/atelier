@@ -83,9 +83,69 @@
       </div>
 
       <div id="result-display" class="result-display" hidden>
-        <img id="result-image" class="result-image" alt="Generated sketch" />
-        <div id="result-prompt" class="result-prompt"></div>
-        <button id="download-btn" class="download-btn">Download Sketch</button>
+        <div class="sketch-and-pattern-wrapper">
+
+          <div class="sketch-column">
+            <img id="result-image" class="result-image" alt="Generated sketch" />
+            <div id="result-prompt" class="result-prompt"></div>
+            <div class="sketch-actions">
+              <button id="download-btn" class="download-btn">Download Sketch</button>
+              <button id="show-pattern-btn" class="show-pattern-btn">Show me how to make this</button>
+            </div>
+          </div>
+
+          <div id="pattern-column" class="pattern-column" hidden>
+
+          <div id="measurements-panel" class="measurements-panel">
+              <div class="measurements-header">
+                <h3 class="pattern-heading" id="measurements-heading">Your Body Measurements</h3>
+                <div class="mode-toggle">
+                  <label class="mode-toggle-label">
+                    <input type="checkbox" id="mode-toggle-checkbox" />
+                    <span id="mode-toggle-text">Beginner mode</span>
+                  </label>
+                </div>
+              </div>
+
+              <p class="pattern-subheading" id="measurements-subheading">Enter your measurements once and they'll be saved for next time</p>
+
+              <div class="unit-toggle">
+                <label><input type="radio" name="unit" value="cm" checked> cm</label>
+                <label><input type="radio" name="unit" value="in"> inches</label>
+              </div>
+
+              <div id="measurement-categories"></div>
+
+              <div class="custom-measurements-section">
+                <div id="custom-measurements-list"></div>
+                <button id="add-custom-btn" class="add-custom-btn" type="button">
+                  + <span id="add-custom-text">Add your own measurement</span>
+                </button>
+              </div>
+
+              <button id="draft-pattern-btn" class="draft-pattern-btn">Make my pattern</button>
+            </div>
+
+            <div id="pattern-display" class="pattern-display" hidden>
+              <h3 class="pattern-heading">Your Pattern</h3>
+
+              <div class="pattern-piece">
+                <h4 class="piece-title">Front piece</h4>
+                <div id="front-svg-container" class="pattern-svg-container"></div>
+                <div id="front-explanation" class="pattern-explanation"></div>
+              </div>
+
+              <div class="pattern-piece">
+                <h4 class="piece-title">Back piece</h4>
+                <div id="back-svg-container" class="pattern-svg-container"></div>
+                <div id="back-explanation" class="pattern-explanation"></div>
+              </div>
+
+              <div class="pattern-summary" id="pattern-summary"></div>
+            </div>
+
+          </div>
+        </div>
       </div>
 
       <div id="result-error" class="result-error" hidden></div>
@@ -103,6 +163,9 @@
     <p>Atelier — built for anyone who wants to design</p>
   </footer>
 
+ <script src="vocabulary.js"></script>
+  <script src="measurements.js"></script>
+  <script src="pattern-engine.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
